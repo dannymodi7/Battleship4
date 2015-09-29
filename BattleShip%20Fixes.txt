@@ -1,0 +1,171 @@
+Below is a full list of the changes we had to make to get our code to compile and run using C#.
+
+Our code was converted with the online service provided by Telerik (www.telerik.com).
+Your code may need other changes depending on how you did your initial conversion.
+
+A zip file with all the files in to after the initial conversion is provided, as well as files from src/Model folder that we have already fixed.
+
+Notes below on what we did, as well as other changes you will still need to do to the files in the src folder.
+
+You will still need to apply fixes to your code for the files in the src folder.
+
+-------------------------------------------------------------------------------
+
+Step to Fix Converted Code
+==========================
+
+replace build/run/clean scripts from a working C# project
+
+edited solution/project files as needed to match our project name (BattleShips)
+
+where errors like
+	./src/GameResources.cs(271,16): error CS1525: Unexpected symbol `in'
+	./src/GameResources.cs(271,32): error CS1525: Unexpected symbol `)', expecting `;' or `}'
+
+fix "foreach" issues (type must be specificed in the (), remove line above each) as needed
+So,
+		Font obj = default(Font);
+		foreach ( obj in _Fonts.Values) {
+becomes
+		foreach (Font obj in _Fonts.Values) {
+
+
+where you see errors like
+	./src/DeploymentController.cs(6,14): error CS0234: The type or namespace name `Data' does not exist in the namespace `System'. Are you missing `System.Data' assembly reference?
+remove "using System.Data;" from all files
+
+
+Where you see this error, fix the GameController constructure by
+	./src/GameController.cs(54,9): error CS0710: `GameController': Static classes cannot have instance constructors
+Change (line 54)
+	public GameController()
+to
+	static GameController()
+
+
+Where you find errors like
+  ./src/UtilityFunctions.cs(27,26): error CS0246: The type or namespace name `Color' could not be found. Are you missing `SwinGameSDK' using directive?
+add "using SwinGameSDK;"
+
+
+For errors like
+	./src/DeploymentController.cs(50,33): error CS0117: `SwinGameSDK.KeyCode' does not contain a definition for `VK_ESCAPE'
+You'll need to replace with the appropriate keycode (find replace, such as)
+	- replace .VK_ with .vk_
+	- replace .vk_R for vk_r
+	- replace .vk_C for vk_c
+
+For errors like
+	./src/DeploymentController.cs(51,4): error CS0103: The name `AddNewState' does not exist in the current context
+
+Add static using clause to give access to other controller's functions (where needed)
+- i.e. Needed in DeploymentController, DiscoveryController, EndingGameController (controllers ...), UtilityFunctions, GameLogic
+  (Don't add a "using" reference for the current class/file - a self reference makes no sense!)
+using static GameController;
+using static UtilityFunctions;
+using static GameResources;
+using static DeploymentController;
+using static DiscoveryController;
+using static EndingGameController;
+using static MenuController;
+using static HighScoreController;
+
+
+For "Conversion" errors like
+	./src/DeploymentController.cs(182,8): error CS0103: The name `Conversion' does not exist in the current context
+replace the Conversion function with a int type cast.
+Example
+ i = Conversion.Int(sn) - 1;
+with
+ i = ((int) sn) - 1;
+
+Where errors like:
+	./src/GameResources.cs(72,10): error CS0118: `GameResources._Fonts' is a `field' but a `method group' was expected
+Look for () replace with  [], such as
+  replace _Font(...) with _Font[...] in etc in GameResources.cs
+
+
+Where errors like
+	./src/HighScoreController.cs(142,16): error CS1061: Type `System.Collections.Generic.List<HighScoreController.Score>' does not contain a definition for `Item' and no extension method `I
+Look for "Item(...)", remove ".Item" and replace (...) with [...]. For example
+  replace _Scores.Item(...) with _Score[...] in HighScoreController
+
+Where errors like
+	./src/MenuController.cs(129,21): error CS1955: The member `MenuController._menuStructure' cannot be used as method or delegate
+Look for and change
+	_menuStructure(menu) to _menuStructure[menu]
+	_menuStructure(menu)(i) to _menuStructure[menu][i]
+
+Where error like
+	./src/UtilityFunctions.cs(145,18): error CS1061: Type `ISeaGrid' does not contain a definition for `Item' and no extension method `Item' of type `ISeaGrid' could be found. Are you missing an assembly reference?
+Look for "Item(...)", remove ".Item" and replace (...) with [...]. For example
+  replace grid.Item(row, col) with
+
+Find and delete duplicate case label in UtilityFunctions.cs
+	case TileView.Ship:
+
+For an error like
+	./src/UtilityFunctions.cs(299,10): error CS1061: Type `SwinGameSDK.Sprite' does not contain a definition for `animationHasEnded' and no extension method `animationHasEnded' of type `SwinGameSDK.Sprite' could be found. Are you missing an assembly reference?
+Rename animatedHasEnded to AnimationHasEnded
+
+
+NOTE: There WILL be SOME WARNINGS still. You can fix these, but it will (should) build and run.
+
+
+==fixed already applied==
+
+Remove explicit interface from change events (ie ISeaGrid.Changed becomes Changed) as needed (two cases)
+
+In
+	ISeaGrid
+	SeaGrid
+	SeaGridAdaptor
+replace incomplete "Item" indexer with C# style
+  public TileView Item {
+with
+	public TileView this[int x, int y] {
+
+
+add () to SwinGame.WindowCloseRequested in AIPlayer.cs as needed
+
+Replace _players(...) with _player[...] in BattleShipGame.cs
+Tip: Use regular expressions (eg BattleShipsGame.cs)
+ - _players\((\d+)\) replace with _players[$1]
+ (There's also a way to match alpha and numeric, not just numeric)
+
+In Player.cs
+ - change (remove initialisation of SeaGrid, which doesn't work in C#)
+  private SeaGrid _playerGrid = new SeaGrid(_Ships)
+ to
+	private SeaGrid _playerGrid;
+ - add initialiation to constructor, so add the follow ...
+  _playerGrid = new SeaGrid(_Ships)
+
+
+In Player.cs replace
+	public Ship Ship {
+		get {
+		...
+		}
+with
+	public Ship Ship(ShipName name) {
+	// remove the get { ... } but keep the ... part!
+
+Move GameTiles initilsation into the constructor for SeaGrid.cs
+(		_GameTiles = new Tile[Width, Height];)
+
+In SeaGrid.cs replace direction.LeftRight with Direction.LeftRight
+
+
+Add missing type case to Ship.cs
+from
+	_sizeOfShip = _shipName;
+to
+	_sizeOfShip = (int)_shipName;
+
+In UtilityFunctions.cs,
+  remove redundant (extra) case label in switch statement
+  replace animationHasEnded with AnimationHasEnded
+
+Fix broken == operator code for AIPlayer Location (infinite recursion bug)
+- use ReferenceEquals() to avoid == overloaded operator recursion

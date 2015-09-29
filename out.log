@@ -1,1 +1,71 @@
-Compilation failed: 8 error(s), 0 warnings
+Microsoft (R) Visual C# Compiler version 4.6.0079.0
+for C# 5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+This compiler is provided as part of the Microsoft (R) .NET Framework, but only supports language versions up to C# 5, which is no longer the latest version. For compilers that support newer versions of the C# programming language, see http://go.microsoft.com/fwlink/?LinkID=533240
+
+src\DeploymentController.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\DeploymentController.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DeploymentController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\DiscoveryController.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\DiscoveryController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\EndingGameController.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\EndingGameController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\GameController.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(7,7): error CS1041: Identifier expected; 'static' is a keyword
+src\GameLogic.cs(7,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\GameLogic.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(9,7): error CS1041: Identifier expected; 'static' is a keyword
+src\HighScoreController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\HighScoreController.cs(15,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\MenuController.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\MenuController.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(8,7): error CS1041: Identifier expected; 'static' is a keyword
+src\UtilityFunctions.cs(8,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(9,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(10,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(11,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(12,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(13,14): error CS1518: Expected class, delegate, enum, interface, or struct
+src\UtilityFunctions.cs(14,14): error CS1518: Expected class, delegate, enum, interface, or struct

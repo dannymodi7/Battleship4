@@ -1,21 +1,27 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips", "BattleShips.csproj", "{871B5A90-103A-46A5-BBB9-07C02B9851D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Battleship|x86 = Battleship|x86
 		Debug-Mac|x86 = Debug-Mac|x86
-		Debug-Windows|x86 = Debug-Windows|x86
 		Debug-Unix|x86 = Debug-Unix|x86
+		Debug-Windows|x86 = Debug-Windows|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Battleship|x86.ActiveCfg = Battleship|x86
+		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Battleship|x86.Build.0 = Battleship|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Mac|x86.ActiveCfg = Debug-Mac|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Mac|x86.Build.0 = Debug-Mac|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Unix|x86.ActiveCfg = Debug-Unix|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Unix|x86.Build.0 = Debug-Unix|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Windows|x86.ActiveCfg = Debug-Windows|x86
 		{871B5A90-103A-46A5-BBB9-07C02B9851D1}.Debug-Windows|x86.Build.0 = Debug-Windows|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
